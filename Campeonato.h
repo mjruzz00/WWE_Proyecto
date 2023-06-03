@@ -4,12 +4,16 @@
 #include <string>
 #include "Luchador.h"
 
-class Campeonato : public Luchador {
+class Campeonato {
 private:
+    std::string nombre;
+    int edad;
     std::string categoria;
 
 public:
     Campeonato(const std::string& nombre, int edad, const std::string& categoria);
+    std::string obtenerNombre() const;
+    int obtenerEdad() const;
     std::string obtenerCategoria() const;
 };
 
