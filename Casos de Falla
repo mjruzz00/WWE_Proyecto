@@ -1,0 +1,48 @@
+#Acceso a miembros privados: Si intentas acceder directamente a miembros privados 
+de una clase desde fuera de la clase, se producirán errores de compilación. 
+Por ejemplo, si intentas acceder directamente al miembro nombre de la clase Arena desde el main, obtendrás un error.
+
+Codigo:
+Arena arena("Amway Center", "Orlando, Florida");
+std::cout << arena.nombre;  // Error: 'nombre' es un miembro privado de la clase Arena
+-------------------------------------------------------------------------------------------------------------------------
+#Uso incorrecto de polimorfismo: Si los métodos en las clases derivadas 
+no tienen la misma firma que los métodos virtuales en la clase base, no se producirá 
+una verdadera sobrescritura de método y es posible que no se obtengan los resultados esperados. 
+Por ejemplo, si en la clase Campeonato cambias el nombre del método obtenerCategoria() a obtenerCategoriaCampeonato(), 
+no se sobrescribirá correctamente el método y se llamará al método de la clase base.
+
+Codigo:
+class Campeonato : public Lugar {
+    // ...
+
+public:
+    std::string obtenerCategoriaCampeonato() const;
+};
+
+std::string Campeonato::obtenerCategoriaCampeonato() const {
+    return categoria;
+}
+
+// ...
+
+Campeonato campeonato("WWE Championship", 37, "Heavyweight");
+std::cout << campeonato.obtenerCategoria();  // Llamada incorrecta, imprime la categoría de Lugar en lugar de Campeonato
+---------------------------------------------------------------------------------------------------------------------------
+#Uso incorrecto de los constructores: Si se proporcionan argumentos incorrectos o se omiten argumentos requeridos en los 
+constructores, los objetos pueden tener valores no válidos o comportamiento inesperado. Por ejemplo, si intentas crear un 
+objeto Campeonato sin proporcionar la categoría, se llamará al constructor de Luchador con el valor 37 como la categoría en
+lugar de la edad.
+
+Codigo:
+Campeonato campeonato("WWE Championship", 37);  // Error: falta el argumento 'categoria'
+-----------------------------------------------------------------------------------------------------------------------------
+#Uso incorrecto de memoria dinámica: Si se utilizan punteros para almacenar objetos dinámicos y no se libera la memoria
+adecuadamente utilizando delete, se producirán fugas de memoria. Por ejemplo, si creas objetos Lugar en el heap y no los liberas,
+se producirá una fuga de memoria.
+
+Codigo:
+Lugar* lugar = new Lugar("Estadio", "Ciudad");
+// ...
+
+delete lugar;  // Se debe liberar la memoria después de su uso, de lo contrario, habrá una fuga de memoria
