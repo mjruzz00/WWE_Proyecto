@@ -1,0 +1,58 @@
++-----------------+
+|     Lugar       |
++-----------------+
+| -nombre: string |
+| -ubicacion: string |
++-----------------+
+| +obtenerNombre(): string |
+| +obtenerUbicacion(): string |
++-----------------+
+
+       ^
+       |
+       |
++------|-------+
+|  Arena       |
++--------------+
+|              |
++--------------+
+| +obtenerNombre(): string        |
+| +obtenerUbicacion(): string     |
++--------------+
+
+       ^
+       |
+       |
++------|-------+
+|  Campeonato  |
++--------------+
+| -categoria: string              |
++--------------+
+| +obtenerNombre(): string        |
+| +obtenerEdad(): int             |
+| +obtenerCategoria(): string     |
++--------------+
+
+       ^
+       |
+       |
++------|-------+
+|  Luchador    |
++--------------+
+| -edad: int                     |
++--------------+
+| +obtenerNombre(): string        |
+| +obtenerEdad(): int             |
++--------------+
+
+       ^
+       |
+       |
++------|-------+
+|  Evento      |
++--------------+
+| -fecha: string                 |
++--------------+
+| +obtenerNombre(): string        |
+| +obtenerFecha(): string         |
++--------------+
