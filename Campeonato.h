@@ -2,7 +2,6 @@
 #define CAMPEONATO_H
 
 #include <string>
-#include "Luchador.h"
 
 class Campeonato {
 private:
@@ -12,6 +11,7 @@ private:
 
 public:
     Campeonato(const std::string& nombre, int edad, const std::string& categoria);
+
     std::string obtenerNombre() const;
     int obtenerEdad() const;
     std::string obtenerCategoria() const;
