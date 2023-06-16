@@ -1,12 +1,10 @@
 #include "Arena.h"
+#include <iostream>
 
 Arena::Arena(const std::string& nombre, const std::string& ubicacion)
-    : nombre(nombre), ubicacion(ubicacion) {}
+    : Lugar(nombre, ubicacion) {}
 
-std::string Arena::obtenerNombre() const {
-    return nombre;
-}
-
-std::string Arena::obtenerUbicacion() const {
-    return ubicacion;
+void Arena::imprimirInformacion() const {
+    std::cout << "Nombre de la arena: " << nombre << std::endl;
+    std::cout << "Ubicación de la arena: " << ubicacion << std::endl;
 }
