@@ -10,6 +10,7 @@ private:
 
 public:
     Evento(const std::string& nombre, const std::string& fecha);
+
     std::string obtenerNombre() const;
     std::string obtenerFecha() const;
 };
