@@ -10,6 +10,7 @@ private:
 
 public:
     Luchador(const std::string& nombre, int edad);
+
     std::string obtenerNombre() const;
     int obtenerEdad() const;
 };
